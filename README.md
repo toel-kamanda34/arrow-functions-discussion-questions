@@ -67,3 +67,96 @@ readBooks("The Old Man and the Sea", "1984") // "I read 'The Old Man and the Sea
 ```javascript
 const readBooks = book1, book2 =>  `I read '${book1}' and '${book2}'` // Syntax Error 
 ```
+
+### with this 
+
+```javascript
+class Cat {
+  constructor(){
+    this.kittens = ["Maru", "Grumpy", "Shadow"]
+  }
+  
+  feedKitten(name){
+    console.log(`Feeding ${name}`)
+  }
+  
+  feedKittens(){
+    this.kittens.forEach(function(kitten){
+      this.feedKitten(kitten)
+    })
+  }
+}
+let cat = new Cat()
+cat.feedKittens() // Uncaught TypeError: Cannot read property 'feedKitten' of undefined
+```
+
+```javascript
+class Cat {
+  constructor(){
+    this.kittens = ["Maru", "Grumpy", "Shadow"]
+  }
+  
+  feedKitten(name){
+    console.log(`Feeding ${name}`)
+  }
+  
+  feedKittens(){
+    this.kittens.forEach(function(kitten){
+      this.feedKitten(kitten)
+    }.bind(this))
+  }
+}
+let cat = new Cat()
+cat.feedKittens()
+// outputs:
+Feeding Maru
+Feeding Grumpy
+Feeding Shadow
+```
+
+```javascript
+class Cat {
+  constructor(){
+    this.kittens = ["Maru", "Grumpy", "Shadow"]
+  }
+  
+  feedKitten(name){
+    console.log(`Feeding ${name}`)
+  }
+  
+  feedKittens(){
+    this.kittens.forEach((kitten) => {
+      this.feedKitten(kitten)
+    })
+  }
+}
+let cat = new Cat()
+cat.feedKittens()
+// outputs:
+Feeding Maru
+Feeding Grumpy
+Feeding Shadow
+```
+
+
+```javascript
+class Cat {
+  constructor(){
+    this.kittens = ["Maru", "Grumpy", "Shadow"]
+  }
+  
+  feedKitten(name){
+    console.log(`Feeding ${name}`)
+  }
+  
+  feedKittens(){
+    this.kittens.forEach( kitten => this.feedKitten(kitten) )
+  }
+}
+let cat = new Cat()
+cat.feedKittens()
+// outputs:
+Feeding Maru
+Feeding Grumpy
+Feeding Shadow
+```
