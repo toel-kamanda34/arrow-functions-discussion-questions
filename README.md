@@ -11,8 +11,8 @@ Take a look at the following code examples and return values with your table par
 ### Arrow Function Shortcuts 
 
 ```javascript 
-var playMusic = function (music) {
-	return "Playing some " + music
+const playMusic = function (music) {
+  return "Playing some " + music
 }
 playMusic("Jazz") // "Playing some Jazz"
 ```
