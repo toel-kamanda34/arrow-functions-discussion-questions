@@ -51,7 +51,7 @@ playMusic("Jazz"); // "Playing some Jazz"
 ```
 
 ```js
-const playMusic = (music) => "Playing some " + music;
+const playMusic = music => "Playing some " + music;
 playMusic("Jazz"); // "Playing some Jazz"
 ```
 
