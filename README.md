@@ -33,13 +33,6 @@ playMusic("Jazz"); // "Playing some Jazz"
 
 ```js
 const playMusic = (music) => {
-  return "Playing some " + music;
-};
-playMusic("Jazz"); // "Playing some Jazz"
-```
-
-```js
-const playMusic = (music) => {
   "Playing some " + music;
 };
 playMusic("Jazz"); // undefined
