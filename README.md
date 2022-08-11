@@ -6,8 +6,9 @@
 
 ## Instructions
 
-Arrow functions are a cool new feature of ES6. They introduce a different syntax
-and carry slightly different behavior than function expressions.
+Arrow functions are a relatively new feature that was introduced with ES6.
+They use a different syntax and carry slightly different behavior than
+function expressions.
 
 Take a look at the following code examples and return values with your table
 partners. Without looking anything up, see if you can deduce the differences
