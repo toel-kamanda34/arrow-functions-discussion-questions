@@ -31,6 +31,7 @@ const playMusic = (music) => {
 };
 playMusic("Jazz"); // "Playing some Jazz"
 ```
+//Both of these functions behave the same way and return the same result.
 
 ```js
 const playMusic = (music) => {
@@ -38,29 +39,30 @@ const playMusic = (music) => {
 };
 playMusic("Jazz"); // undefined
 ```
-
+// there is no return statement that is why the function will return undefined
 ```js
 const playMusic = (music) => "Playing some " + music;
 playMusic("Jazz"); // "Playing some Jazz"
 ```
-
+//parentesis can be used for a single parameter in arrow function
 ```js
 const playMusic = music => "Playing some " + music;
 playMusic("Jazz"); // "Playing some Jazz"
 ```
-
+//parentesis can be omitted for a single parameter in arrow function
 ```js
 const readBooks = (book1, book2) => {
   return `I read '${book1}' and '${book2}'`;
 };
 readBooks("The Old Man and the Sea", "1984"); // "I read 'The Old Man and the Sea' and '1984'"
 ```
-
+// parentheses are required when there are more than one parameter
 ```js
 const readBooks = (book1, book2) => `I read '${book1}' and '${book2}'`;
 readBooks("The Old Man and the Sea", "1984"); // "I read 'The Old Man and the Sea' and '1984'"
 ```
-
+//curly brackets can be omitted in arrow functions
 ```js
 const readBooks = book1, book2 =>  `I read '${book1}' and '${book2}'` // Syntax Error
 ```
+//parentesis is needed when you have more than one parameter
